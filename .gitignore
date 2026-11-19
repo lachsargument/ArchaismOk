@@ -1,0 +1,11 @@
+.DS_Store
+# build outputs
+icons/ArchaismOk/
+icons/report.html
+# makepkg
+icons/src/
+icons/pkg/
+*.pkg.tar.*
+theme/src/
+theme/pkg/
+reference/

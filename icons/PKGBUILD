@@ -1,0 +1,22 @@
+# Maintainer: ArchaismOk
+
+pkgname=archaismok-icons
+pkgver=2026.11.18
+pkgrel=1
+pkgdesc='ArchaismOk icon theme, based on Fedora 12 (Mist and GNOME 2.28)'
+arch=('any')
+license=('LGPL-3.0-or-later' 'CC-BY-SA-3.0')
+depends=('hicolor-icon-theme')
+# Its pacman hook builds icon-theme.cache, so no .install script is needed.
+optdepends=('gtk-update-icon-cache: faster icon lookup')
+
+# ponytail: packages the already-built ArchaismOk/ next to this file; switch to
+# a git source plus build.py in build() when publishing.
+package() {
+    install -d "$pkgdir/usr/share/icons"
+    cp -r "$startdir/ArchaismOk" "$pkgdir/usr/share/icons/ArchaismOk"
+    # Finder litter if the tree was copied over from macOS
+    find "$pkgdir/usr/share/icons/ArchaismOk" \( -name .DS_Store -o -name '._*' \) -delete
+    find "$pkgdir/usr/share/icons/ArchaismOk" -type d -exec chmod 755 {} +
+    find "$pkgdir/usr/share/icons/ArchaismOk" -type f -exec chmod 644 {} +
+}

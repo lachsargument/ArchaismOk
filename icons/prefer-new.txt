@@ -1,0 +1,4 @@
+applets-screenshooter
+emptytrash
+gnome-stock-trash-full
+system-log-out
