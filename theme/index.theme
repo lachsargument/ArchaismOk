@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=ArchaismOk
+Comment=Fedora 12 look for GTK 2/3 and Marco, forked from Clearlooks-Phénix
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=ArchaismOk
+MetacityTheme=ArchaismOk
+IconTheme=ArchaismOk
+CursorTheme=DMZ-White
+CursorSize=16
+ButtonLayout=:minimize,maximize,close

@@ -1,0 +1,21 @@
+# Maintainer: ArchaismOk
+
+pkgname=archaismok-gtk-theme
+pkgver=2026.11.18
+pkgrel=1
+pkgdesc='ArchaismOk GTK 2/3 and Marco theme, forked from Clearlooks-Phénix'
+arch=('any')
+license=('GPL-3.0-or-later' 'LGPL-2.1-or-later')
+optdepends=('gtk-engines: Clearlooks engine for GTK 2 applications'
+            'archaismok-icons: matching icon theme')
+
+# ponytail: packages the files next to this PKGBUILD; switch to a git
+# source when publishing.
+package() {
+    local dest="$pkgdir/usr/share/themes/ArchaismOk"
+    install -d "$dest"
+    cp -r "$startdir"/{gtk-2.0,gtk-3.0,metacity-1,index.theme} "$dest/"
+    find "$dest" \( -name .DS_Store -o -name '._*' \) -delete
+    find "$dest" -type d -exec chmod 755 {} +
+    find "$dest" -type f -exec chmod 644 {} +
+}
